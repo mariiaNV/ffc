@@ -6,7 +6,7 @@ import { LinkButton } from "@/components/LinkButton";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { services } from "@/lib/services";
-import { site } from "@/lib/site";
+import { getPublicAssetPath, site } from "@/lib/site";
 
 function Badge({ children }: { children: ReactNode }) {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white">
               <div className="relative h-44 sm:h-60 lg:h-72">
                 <Image
-                  src="/banner.jpg"
+                  src={getPublicAssetPath("/banner.jpg")}
                   alt="Банер First Fumigation Company"
                   fill
                   priority
@@ -85,7 +85,7 @@ export default function Home() {
                   </div>
                   <div className="relative mt-4 h-44 bg-zinc-50">
                     <Image
-                      src="/banner2.jpg"
+                      src={getPublicAssetPath("/banner2.jpg")}
                       alt="Дезінсекція з гарантією"
                       fill
                       sizes="100vw"
@@ -150,7 +150,7 @@ export default function Home() {
             <div className="relative left-1/2 mt-10 hidden w-screen -translate-x-1/2 overflow-hidden border-y border-zinc-200 bg-white sm:block">
               <div className="relative h-64 bg-zinc-50 lg:h-80">
                 <Image
-                  src="/banner2.jpg"
+                  src={getPublicAssetPath("/banner2.jpg")}
                   alt="Дезінсекція з гарантією"
                   fill
                   sizes="100vw"
@@ -208,7 +208,7 @@ export default function Home() {
                   <div className="absolute left-6 top-6 h-16 w-16 rounded-full border border-emerald-100 bg-emerald-50" />
                   <div className="absolute right-8 top-10 h-10 w-10 rounded-full border border-zinc-200 bg-zinc-50" />
                   <Image
-                    src="/block2.png"
+                    src={getPublicAssetPath("/block2.png")}
                     alt="Команда First Fumigation Company"
                     width={720}
                     height={720}
@@ -243,7 +243,7 @@ export default function Home() {
                   <div className="absolute left-6 top-6 h-16 w-16 rounded-full border border-emerald-100 bg-emerald-50" />
                   <div className="absolute right-8 top-10 h-10 w-10 rounded-full border border-zinc-200 bg-zinc-50" />
                   <Image
-                    src="/app1.png"
+                    src={getPublicAssetPath("/app1.png")}
                     alt="Спеціаліст First Fumigation Company"
                     width={420}
                     height={420}

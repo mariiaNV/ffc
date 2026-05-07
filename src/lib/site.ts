@@ -29,3 +29,9 @@ export function getAbsoluteUrl(pathname: string = "/"): string {
 export function getMetadataBase(): URL {
   return new URL(getSiteUrl());
 }
+
+export function getPublicAssetPath(pathname: string): string {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+  const path = pathname.startsWith("/") ? pathname : `/${pathname}`;
+  return `${basePath}${path}`;
+}

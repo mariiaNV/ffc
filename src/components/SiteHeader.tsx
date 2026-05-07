@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 
 import { Container } from "@/components/Container";
-import { site } from "@/lib/site";
+import { getPublicAssetPath, site } from "@/lib/site";
 
 const navItems = [
   { href: "/#pro-nas", label: "Про нас" },
@@ -29,7 +29,7 @@ export function SiteHeader() {
           className="group relative flex shrink-0 items-center"
         >
           <Image
-            src="/logo.png"
+            src={getPublicAssetPath("/logo.png")}
             alt={`Логотип ${site.name}`}
             width={900}
             height={500}

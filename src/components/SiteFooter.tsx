@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/Container";
-import { site } from "@/lib/site";
+import { getPublicAssetPath, site } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
             <Image
-              src="/logo.png"
+              src={getPublicAssetPath("/logo.png")}
               alt={`Логотип ${site.name}`}
               width={36}
               height={36}
