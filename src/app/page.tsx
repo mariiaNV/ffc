@@ -17,6 +17,16 @@ function Badge({ children }: { children: ReactNode }) {
 }
 
 export default function Home() {
+  const workProcessGallery = Array.from({ length: 9 }, (_, index) => {
+    const number = index + 1;
+
+    return {
+      src: getPublicAssetPath(`/${number}.jpg`),
+      alt: `Процес роботи — фото ${number}`,
+      number,
+    };
+  });
+
   return (
     <div className="flex-1">
       <main id="main">
@@ -312,6 +322,77 @@ export default function Home() {
                 </p>
               </li>
             </ol>
+
+            <div className="mt-14">
+              <SectionHeading
+                eyebrow="Процес у фото"
+                title="Як виглядає робота на об’єкті"
+                subtitle="Реальні кадри з виконання робіт — від підготовки до контролю результату."
+              />
+
+              <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {workProcessGallery.map((photo) => (
+                  <li
+                    key={photo.src}
+                    className="overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50"
+                  >
+                    <div className="relative h-56">
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        fill
+                        sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                      <span className="absolute left-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 bg-white text-xs font-semibold text-zinc-700">
+                        {photo.number}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Container>
+        </section>
+
+        <section className="border-y border-zinc-200 bg-zinc-50">
+          <Container className="py-16 sm:py-20">
+            <SectionHeading
+              eyebrow="Куток інформації"
+              title="Короткі матеріали для клієнтів"
+            />
+
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
+              <div className="mx-auto w-full overflow-hidden rounded-3xl border border-zinc-200 bg-white sm:max-w-sm">
+                <div
+                  className="relative w-full bg-zinc-50"
+                  style={{ aspectRatio: "9 / 16" }}
+                >
+                  <Image
+                    src={getPublicAssetPath("/info1.jpg")}
+                    alt="Куток інформації — слайд 1"
+                    fill
+                    sizes="(min-width: 1024px) 384px, (min-width: 640px) 384px, 100vw"
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+
+              <div className="mx-auto w-full overflow-hidden rounded-3xl border border-zinc-200 bg-white sm:max-w-sm">
+                <div
+                  className="relative w-full bg-zinc-50"
+                  style={{ aspectRatio: "9 / 16" }}
+                >
+                  <Image
+                    src={getPublicAssetPath("/info2.jpg")}
+                    alt="Куток інформації — слайд 2"
+                    fill
+                    sizes="(min-width: 1024px) 384px, (min-width: 640px) 384px, 100vw"
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            </div>
           </Container>
         </section>
 
