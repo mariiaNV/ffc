@@ -35,7 +35,7 @@ export default function OpenGraphImage() {
             {site.alternateName}
           </div>
           <div style={{ fontSize: 26, lineHeight: 1.3, maxWidth: 900 }}>
-            Фумігація • Фітосанітарний захист • Логістика • Дезінсекція
+            Фумігація • Фітосанітарний захист
           </div>
         </div>
 

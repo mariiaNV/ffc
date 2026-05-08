@@ -13,7 +13,6 @@ const navItems = [
   { href: "/#poslugy", label: "Послуги" },
   { href: "/#etapy", label: "Етапи" },
   { href: "/#perevagy", label: "Переваги" },
-  { href: "/#dezinsekciya", label: "Дезінсекція" },
   { href: "/#kontakty", label: "Контакти" },
 ];
 

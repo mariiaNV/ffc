@@ -13,7 +13,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const defaultTitle = `${site.name} — фумігація, логістика та дезінсекція`;
+const defaultTitle = `${site.name} — фумігація та знезараження`;
 
 export const metadata: Metadata = {
   metadataBase: getMetadataBase(),

@@ -7,7 +7,7 @@ import { services } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Послуги",
   description:
-    "Повний спектр фумігаційних, фітосанітарних та логістичних послуг: стаціонарна і транзитна фумігація, перевезення, експедирування, складська логістика та дезінсекція.",
+    "Повний спектр фумігаційних та фітосанітарних послуг: фумігація складів, суден та контейнерів.",
   alternates: { canonical: "/poslugy" },
 };
 
@@ -20,7 +20,7 @@ export default function ServicesIndexPage() {
             <SectionHeading
               eyebrow="First Fumigation Company"
               title="Наші послуги"
-              subtitle="Фумігація, фітосанітарний захист і логістика — під задачі будь-якої складності."
+              subtitle="Фумігація та фітосанітарний захист — під задачі будь-якої складності."
             />
           </Container>
         </section>

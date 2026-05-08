@@ -17,15 +17,21 @@ function Badge({ children }: { children: ReactNode }) {
 }
 
 export default function Home() {
-  const workProcessGallery = Array.from({ length: 9 }, (_, index) => {
-    const number = index + 1;
+  const workProcessGallery = [4, 5, 6, 7, 8, 9].map((number) => ({
+    src: getPublicAssetPath(`/${number}.jpg`),
+    alt: `Процес роботи — фото ${number}`,
+  }));
 
-    return {
-      src: getPublicAssetPath(`/${number}.jpg`),
-      alt: `Процес роботи — фото ${number}`,
-      number,
-    };
-  });
+  workProcessGallery.push(
+    {
+      src: getPublicAssetPath("/photo1.png"),
+      alt: "Процес роботи — додаткове фото 1",
+    },
+    {
+      src: getPublicAssetPath("/photo2.png"),
+      alt: "Процес роботи — додаткове фото 2",
+    },
+  );
 
   return (
     <div className="flex-1">
@@ -54,7 +60,6 @@ export default function Home() {
                 <div className="flex flex-wrap gap-2">
                   <Badge>Фумігація</Badge>
                   <Badge>Фітосанітарний захист</Badge>
-                  <Badge>Логістика</Badge>
                   <Badge>GAFTA / FOSFA</Badge>
                 </div>
 
@@ -66,12 +71,7 @@ export default function Home() {
                 </p>
 
                 <p className="mt-6 text-base leading-7 text-zinc-600">
-                  Транспортування та зберігання сільськогосподарських культур
-                  неможливе без дієвого фітосанітарного захисту. Ми виконуємо
-                  фумігацію та супутні роботи для збереження якості врожаю і
-                  безпечного руху продукції в ланцюгу постачання. Це також
-                  сприяє продовольчій безпеці України та підтримує імідж держави
-                  як одного з провідних експортерів зернових і технічних культур.
+                  Ми виконуємо професійну фумігацію складів, суден, що йдуть на експорт, та контейнерів. Гарантуємо ефективний фітосанітарний захист, дотримання норм безпеки та збереження якості продукції.
                 </p>
 
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -81,27 +81,6 @@ export default function Home() {
                   <LinkButton href="/poslugy" variant="secondary">
                     Наші послуги
                   </LinkButton>
-                </div>
-
-                <div className="mt-8 overflow-hidden rounded-3xl border border-zinc-200 bg-white sm:hidden">
-                  <div className="px-5 pt-5">
-                    <div className="text-sm font-semibold text-zinc-900">
-                      Дезінсекція з гарантією
-                    </div>
-                    <p className="mt-1 text-sm leading-6 text-zinc-600">
-                      Професійна обробка від тарганів та інших шкідників з
-                      фіксацією результату в договорі або акті.
-                    </p>
-                  </div>
-                  <div className="relative mt-4 h-44 bg-zinc-50">
-                    <Image
-                      src={getPublicAssetPath("/banner2.jpg")}
-                      alt="Дезінсекція з гарантією"
-                      fill
-                      sizes="100vw"
-                      className="object-contain"
-                    />
-                  </div>
                 </div>
 
                 <div className="mt-10 grid gap-4 sm:grid-cols-3">
@@ -144,27 +123,27 @@ export default function Home() {
                   </p>
                   <div className="mt-5 grid gap-3">
                     <div className="rounded-2xl bg-zinc-50 p-4 text-sm text-zinc-700">
-                      Фумігація складів, елеваторів, контейнерів і суден
+                      Фумігація складів та зерносховищ
                     </div>
                     <div className="rounded-2xl bg-zinc-50 p-4 text-sm text-zinc-700">
-                      Транспортна та складська логістика агровантажів
+                      Фумігація суден на експорт
                     </div>
                     <div className="rounded-2xl bg-zinc-50 p-4 text-sm text-zinc-700">
-                      Дезінсекція: таргани з гарантією та інші шкідники
+                      Фумігація контейнерів
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="relative left-1/2 mt-10 hidden w-screen -translate-x-1/2 overflow-hidden border-y border-zinc-200 bg-white sm:block">
-              <div className="relative h-64 bg-zinc-50 lg:h-80">
+            <div className="mt-12 overflow-hidden rounded-3xl border border-zinc-200 bg-white">
+              <div className="relative h-44 sm:h-60 lg:h-72">
                 <Image
                   src={getPublicAssetPath("/banner2.jpg")}
-                  alt="Дезінсекція з гарантією"
+                  alt="Банер First Fumigation Company"
                   fill
-                  sizes="100vw"
-                  className="object-contain"
+                  sizes="(min-width: 1024px) 1152px, 100vw"
+                  className="object-cover object-[right_top]"
                 />
               </div>
             </div>
@@ -177,7 +156,7 @@ export default function Home() {
               <div className="lg:col-span-7">
                 <SectionHeading
                   eyebrow="Про компанію"
-                  title="Професійний фітосанітарний захист та логістика"
+                  title="Професійний фітосанітарний захист"
                   subtitle="First Fumigation Company — провідна фумігаційна компанія, що застосовує сучасні технології знезараження для захисту врожаю та вантажів."
                 />
 
@@ -236,8 +215,8 @@ export default function Home() {
               <div className="lg:col-span-7">
                 <SectionHeading
                   eyebrow="Наші послуги"
-                  title="Фумігація, перевезення та складська логістика"
-                  subtitle="Повний комплекс робіт — від знезараження до доставки та експедирування."
+                  title="Комплексна фумігація та знезараження"
+                  subtitle="Повний комплекс робіт — від знезараження до підготовки сертифікатів."
                 />
                 <Link
                   href="/poslugy"
@@ -331,7 +310,7 @@ export default function Home() {
               />
 
               <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {workProcessGallery.map((photo) => (
+                {workProcessGallery.map((photo, index) => (
                   <li
                     key={photo.src}
                     className="overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-50"
@@ -345,7 +324,7 @@ export default function Home() {
                         className="object-cover"
                       />
                       <span className="absolute left-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-200 bg-white text-xs font-semibold text-zinc-700">
-                        {photo.number}
+                        {index + 1}
                       </span>
                     </div>
                   </li>
@@ -436,138 +415,6 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-            </div>
-          </Container>
-        </section>
-
-        <section id="dezinsekciya" className="bg-white">
-          <Container className="py-16 sm:py-20">
-            <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-8">
-              <div className="grid gap-8 lg:grid-cols-12 lg:items-center">
-                <div className="lg:col-span-7">
-                  <div className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
-                    Додаткова послуга
-                  </div>
-                  <h2 className="mt-2 text-2xl font-semibold tracking-tight text-emerald-950 sm:text-3xl">
-                    Дезінсекція від тарганів з гарантією — і не тільки
-                  </h2>
-                  <p className="mt-3 text-sm leading-6 text-emerald-950/80">
-                    Професійна обробка від тарганів із гарантією результату (умови
-                    фіксуємо в договорі/акті). Також виконуємо дезінсекцію від
-                    клопів, мурах, бліх, молі та інших побутових шкідників.
-                  </p>
-
-                  <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                    <LinkButton
-                      href="/poslugy/dezinsekciya-tarakany-garantiya"
-                      variant="primary"
-                    >
-                      Детальніше про дезінсекцію
-                    </LinkButton>
-                    <LinkButton href="/#kontakty" variant="secondary">
-                      Замовити обробку
-                    </LinkButton>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-5">
-                  <div className="rounded-2xl border border-emerald-200 bg-white p-6">
-                    <div className="text-sm font-semibold text-emerald-950">
-                      Що важливо для точного підбору методу
-                    </div>
-                    <ul className="mt-4 space-y-3 text-sm leading-6 text-emerald-950/80">
-                      <li>Тип об’єкта: квартира / офіс / склад</li>
-                      <li>Рівень зараження та «гарячі» зони</li>
-                      <li>Наявність дітей/тварин та вимоги до безпеки</li>
-                      <li>Бажані строки та час виконання</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        <section className="bg-white">
-          <Container className="py-16 sm:py-20">
-            <div className="flex items-end justify-between gap-6">
-              <SectionHeading
-                eyebrow="База про тарганів"
-                title="Короткий гайд: підготовка, процес, профілактика"
-                subtitle="Зібрали практичні відповіді на найчастіші питання, щоб дезінсекція пройшла спокійно та дала стабільний результат."
-              />
-              <Link
-                href="/poslugy/dezinsekciya-tarakany-garantiya"
-                className="hidden text-sm font-semibold text-emerald-700 hover:text-emerald-800 sm:inline"
-              >
-                Весь гайд →
-              </Link>
-            </div>
-
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <article className="rounded-2xl border border-zinc-200 bg-white p-6">
-                <h3 className="text-base font-semibold text-zinc-900">
-                  Підготовка до обробки
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-600">
-                  Чеклист дій перед приїздом майстра: доступ до зон, їжа/посуд,
-                  тварини, вентиляція.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/poslugy/dezinsekciya-tarakany-garantiya#pidgotovka"
-                    className="text-sm font-semibold text-emerald-700 hover:text-emerald-800"
-                  >
-                    Відкрити чеклист →
-                  </Link>
-                </div>
-              </article>
-
-              <article className="rounded-2xl border border-zinc-200 bg-white p-6">
-                <h3 className="text-base font-semibold text-zinc-900">
-                  Як проходить дезінсекція
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-600">
-                  Що відбувається під час обробки, як підбираємо метод і які зони
-                  обробляємо в першу чергу.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/poslugy/dezinsekciya-tarakany-garantiya#yak-prohodyt"
-                    className="text-sm font-semibold text-emerald-700 hover:text-emerald-800"
-                  >
-                    Дізнатися деталі →
-                  </Link>
-                </div>
-              </article>
-
-              <article className="rounded-2xl border border-zinc-200 bg-white p-6">
-                <h3 className="text-base font-semibold text-zinc-900">
-                  Профілактика
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-600">
-                  Як зменшити ризик повернення: вода, щілини, стояки/вентиляція,
-                  харчові джерела.
-                </p>
-                <div className="mt-4">
-                  <Link
-                    href="/poslugy/dezinsekciya-tarakany-garantiya#profilaktyka"
-                    className="text-sm font-semibold text-emerald-700 hover:text-emerald-800"
-                  >
-                    Перейти до порад →
-                  </Link>
-                </div>
-              </article>
-            </div>
-
-            <div className="mt-10 sm:hidden">
-              <LinkButton
-                href="/poslugy/dezinsekciya-tarakany-garantiya"
-                variant="secondary"
-                className="w-full"
-              >
-                Весь гайд про тарганів
-              </LinkButton>
             </div>
           </Container>
         </section>
