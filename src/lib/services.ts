@@ -1,4 +1,4 @@
-export type ServiceCategory = "fumigation";
+export type ServiceCategory = "fumigation" | "pest-control";
 
 export type ServiceSection = {
   id: string;
