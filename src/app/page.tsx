@@ -39,14 +39,14 @@ export default function Home() {
         <section aria-label="Банер" className="border-b border-zinc-200 bg-zinc-50">
           <Container className="py-6 sm:py-8">
             <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white">
-              <div className="relative h-44 sm:h-60 lg:h-72">
+              <div className="relative h-56 sm:h-72 lg:h-96">
                 <Image
                   src={getPublicAssetPath("/banner2.jpg")}
                   alt="Банер First Fumigation Company"
                   fill
                   priority
                   sizes="(min-width: 1024px) 1152px, 100vw"
-                  className="object-cover object-[right_top]"
+                  className="object-cover object-[right_bottom]"
                 />
               </div>
             </div>
