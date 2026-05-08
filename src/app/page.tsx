@@ -111,7 +111,21 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5">
+              <div className="order-2 lg:order-3 lg:col-span-12">
+                <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white">
+                  <div className="relative h-44 sm:h-60 lg:h-72">
+                    <Image
+                      src={getPublicAssetPath("/banner2.jpg")}
+                      alt="Банер First Fumigation Company"
+                      fill
+                      sizes="(min-width: 1024px) 1152px, 100vw"
+                      className="object-cover object-[right_top]"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="order-3 lg:order-2 lg:col-span-5">
                 <div className="rounded-3xl border border-zinc-200 bg-white p-6">
                   <div className="text-sm font-semibold text-zinc-900">
                     Виконуємо замовлення будь-якої складності
@@ -133,18 +147,6 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="mt-12 overflow-hidden rounded-3xl border border-zinc-200 bg-white">
-              <div className="relative h-44 sm:h-60 lg:h-72">
-                <Image
-                  src={getPublicAssetPath("/banner2.jpg")}
-                  alt="Банер First Fumigation Company"
-                  fill
-                  sizes="(min-width: 1024px) 1152px, 100vw"
-                  className="object-cover object-[right_top]"
-                />
               </div>
             </div>
           </Container>
