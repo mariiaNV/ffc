@@ -41,7 +41,7 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white">
               <div className="relative h-44 sm:h-60 lg:h-72">
                 <Image
-                  src={getPublicAssetPath("/banner.jpg")}
+                  src={getPublicAssetPath("/banner2.jpg")}
                   alt="Банер First Fumigation Company"
                   fill
                   priority
@@ -115,7 +115,7 @@ export default function Home() {
                 <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white">
                   <div className="relative h-44 sm:h-60 lg:h-72">
                     <Image
-                      src={getPublicAssetPath("/banner2.jpg")}
+                      src={getPublicAssetPath("/banner.jpg")}
                       alt="Банер First Fumigation Company"
                       fill
                       sizes="(min-width: 1024px) 1152px, 100vw"
