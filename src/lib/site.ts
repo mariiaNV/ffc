@@ -9,8 +9,8 @@ export const site = {
   city: "Одеса",
   phoneDisplay: "+38 (068) 898 85 11",
   phoneTel: "+380688988511",
-  email: "contact@ffum.in.ua",
-  directorEmail: "VasilyG@ffum.in.ua",
+  email: "vasilyffc2025@gmail.com",
+  directorEmail: "vasilyffc2025@gmail.com",
 } as const;
 
 export function getSiteUrl(): string {
