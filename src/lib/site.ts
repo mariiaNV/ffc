@@ -15,7 +15,7 @@ export const site = {
 
 export function getSiteUrl(): string {
   const envUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  const fallback = "http://localhost:3000";
+  const fallback = "https://ffc.company";
   const url = (envUrl && envUrl.trim().length > 0 ? envUrl : fallback).trim();
   return url.endsWith("/") ? url.slice(0, -1) : url;
 }
