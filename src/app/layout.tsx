@@ -60,6 +60,20 @@ export default function RootLayout({
         </a>
 
         <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18151462223"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="afterInteractive">
+          {`
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'AW-18151462223');
+          `}
+        </Script>
+
+        <Script
           id="ld-org"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
